@@ -1,10 +1,53 @@
-import { Coffee, Clock, MapPin, Phone, Mail, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Coffee, Clock, MapPin, Phone, Mail, Facebook, Instagram, Twitter, Moon, Sun } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 export default function CoffeeLanding() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const isDarkMode = localStorage.getItem('theme') === 'dark' || 
+      (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    setIsDark(isDarkMode);
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
+  const toggleDarkMode = () => {
+    const newDarkMode = !isDark;
+    setIsDark(newDarkMode);
+    localStorage.setItem('theme', newDarkMode ? 'dark' : 'light');
+    if (newDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
+      {/* Navigation Bar */}
+      <nav className="fixed top-0 w-full bg-white/95 dark:bg-foreground/95 backdrop-blur-sm z-50 shadow-sm">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2 font-bold text-lg">
+            <Coffee className="w-6 h-6 text-primary" />
+            Brew Haven
+          </div>
+          <button
+            onClick={toggleDarkMode}
+            className="p-2 rounded-lg bg-secondary/10 hover:bg-secondary/20 transition"
+            aria-label="Toggle dark mode"
+          >
+            {isDark ? (
+              <Sun className="w-5 h-5" />
+            ) : (
+              <Moon className="w-5 h-5" />
+            )}
+          </button>
+        </div>
+      </nav>
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-16">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{

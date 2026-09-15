@@ -1,4 +1,4 @@
-import { Coffee, Clock, MapPin, Phone, Mail } from 'lucide-react';
+import { Coffee, Clock, MapPin, Phone, Mail, Facebook, Instagram, Twitter } from 'lucide-react';
 
 export default function CoffeeLanding() {
   return (
@@ -227,12 +227,56 @@ export default function CoffeeLanding() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-foreground text-white py-8 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="mb-2">© 2024 Brew Haven. All rights reserved.</p>
-          <p className="text-gray-300">
-            ☕ Made with love and the finest coffee beans
-          </p>
+      <footer className="bg-foreground text-background py-12">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            {/* Brand */}
+            <div className="flex flex-col items-center md:items-start">
+              <div className="flex items-center gap-2 mb-2">
+                <Coffee className="w-6 h-6" />
+                <h3 className="text-xl font-bold">Brew Haven</h3>
+              </div>
+              <p className="text-background/80 text-sm">
+                Crafted coffee, crafted moments
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div className="flex flex-col items-center">
+              <h4 className="font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-sm text-background/80">
+                <li><a href="#menu" className="hover:text-background transition">Menu</a></li>
+                <li><a href="#hours" className="hover:text-background transition">Hours</a></li>
+                <li><a href="#contact" className="hover:text-background transition">Contact</a></li>
+              </ul>
+            </div>
+
+            {/* Social Media */}
+            <div className="flex flex-col items-center md:items-end">
+              <h4 className="font-semibold mb-4">Follow Us</h4>
+              <div className="flex gap-4">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
+                   className="hover:text-background transition">
+                  <Facebook className="w-5 h-5" />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                   className="hover:text-background transition">
+                  <Instagram className="w-5 h-5" />
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
+                   className="hover:text-background transition">
+                  <Twitter className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-background/20 pt-8">
+            <p className="text-center text-sm text-background/70">
+              &copy; 2024 Brew Haven Coffee Shop. All rights reserved.
+            </p>
+          </div>
         </div>
       </footer>
     </div>

@@ -269,6 +269,56 @@ export default function CoffeeLanding() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-20 px-4 bg-secondary/10">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-16">What Our Customers Say</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Testimonial 1 */}
+            <div className="bg-card p-8 rounded-lg shadow-md">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-primary">★</span>
+                ))}
+              </div>
+              <p className="text-foreground/80 mb-4">
+                "Best coffee in town! The atmosphere is cozy and the baristas really know their craft. I come here every morning."
+              </p>
+              <p className="font-semibold">- Sarah M.</p>
+              <p className="text-sm text-foreground/60">Regular Customer</p>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="bg-card p-8 rounded-lg shadow-md">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-primary">★</span>
+                ))}
+              </div>
+              <p className="text-foreground/80 mb-4">
+                "Brew Haven is my go-to spot for meetings. Great coffee, free WiFi, and the pastries are absolutely delicious!"
+              </p>
+              <p className="font-semibold">- James T.</p>
+              <p className="text-sm text-foreground/60">Coffee Enthusiast</p>
+            </div>
+
+            {/* Testimonial 3 */}
+            <div className="bg-card p-8 rounded-lg shadow-md">
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} className="text-primary">★</span>
+                ))}
+              </div>
+              <p className="text-foreground/80 mb-4">
+                "The perfect blend of quality and warmth. Every visit feels like coming home. Highly recommend!"
+              </p>
+              <p className="font-semibold">- Emma L.</p>
+              <p className="text-sm text-foreground/60">Loyal Member</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-foreground text-background py-12">
         <div className="max-w-4xl mx-auto px-4">

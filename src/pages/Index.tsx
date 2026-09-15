@@ -62,7 +62,7 @@ export default function CoffeeLanding() {
           <div className="mb-6 flex justify-center">
             <Coffee className="w-16 h-16" />
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">Brew Haven</h1>
+          <h1 className="text-7xl md:text-9xl font-bold mb-4 text-center">Brew Haven</h1>
           <p className="text-xl md:text-2xl mb-8 text-gray-100">
             Artisan Coffee & Cozy Vibes
           </p>
